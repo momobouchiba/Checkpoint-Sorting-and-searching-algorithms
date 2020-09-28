@@ -1,0 +1,26 @@
+InsertionSort(a:ARRY_of INTEGER[50],n)
+var i,j,temp:INTEGER;
+Begin
+    for k = 1 to n-1 step 1 Do 
+        Set temp = a[k];
+        Set j = k-1;
+        while( temp < a[j] and j >= 0) do
+            Set a[j+1] = a[j];
+            Set j = j-1;
+        endwhile
+        Set a[j+1] = temp;
+    endfor
+End
+ALGORITHM Insertion_sort_algo
+VAR
+a  : ARRAY_OF INTEGER[100];
+    n,i : INTEGER;
+BEGIN
+    Write("give the number of elements of the table")
+    Read(n)
+    FOR i FROM 0 TO n-1 STEP 1  DO
+        Write("give the integer to insert in the table")
+        Read(a[i])
+    END_FOR
+    Insertion_sort(a,n);
+END
